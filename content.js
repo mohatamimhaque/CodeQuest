@@ -249,8 +249,8 @@
                                         const storedStatus = stored[submissionKey];
 
                                         if (storedStatus === "1") {
-                                            // console.log(`✔ Skipping ${submissionId}, already uploaded`);
-                                            // continue;
+                                            console.log(`✔ Skipping ${submissionId}, already uploaded`);
+                                            continue;
                                         }
 
                                         const contestId = submission.contestId;
@@ -987,6 +987,7 @@ setInterval(updateTimer, 1000);
 
 
     }
+
 
 
 
