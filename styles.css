@@ -1,0 +1,337 @@
+*{
+    margin: 0;
+    padding: 0; 
+    border-radius: 0px;
+    box-shadow: none;
+
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width:400px;
+    position: relative;
+    border-color: rgba(236, 236, 236, 0.6);
+}
+  
+  main.tracker-container {
+    width: 92%;
+    max-width: 600px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    height: 400px;
+    position: relative;
+   
+  }
+  main.tracker-container .modal-section{
+    position: fixed;
+    top:75px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 600px;
+    background: white;
+    border-radius: 10px;
+    z-index: 1000;
+    height: 600px;
+    display: none;
+  }
+  main.tracker-container .modal-section.active{
+    display:block;
+  }
+  .tracker-title {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 12px;
+    color: #333;
+    padding: 16px;
+    border-bottom: 2px solid gray;
+    margin-bottom: 8px;
+  }
+  
+  .form-section, .target-section, .add-section {
+    margin-bottom: 6px;
+  }
+  .form-section .item{
+    display: flex;
+    width:100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+  }
+  
+  .form-label {
+    font-size: 14px;
+    display: block;
+    color: #00796b;
+    width:200px;
+    text-wrap: nowrap;
+  }
+  
+  .input-field {
+    width: 100%;
+    padding:4px 8px;
+    margin-bottom: 3px;
+    font-size: .8rem;
+    border: 1px solid #00796b;
+    border-radius: 5px;
+    width:200px;
+    outline: none;
+    color:#00796b;
+    background: transparent;
+
+  }
+  input,label,select,option{
+    cursor: pointer;
+  }
+  .input-field:disabled {
+    background: transparent;
+    color: #aaa;
+    cursor: default;
+  }
+  
+  .dropdown {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #00796b;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  #add{
+    width: 100%;
+    padding: 8px;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    color:#ddd;
+    background: #343A40;
+    cursor: pointer;
+    font-weight: 800;
+  }
+  #add:hover{
+    background: #2c3136;
+    transition: 0.3s;
+  }
+  #set,#setnew,#setgithub,#setrepo {
+    width: 100%;
+    padding: 8px;
+    font-size: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    background: #00796b;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 800;
+    margin-top: 20px;
+  }
+  
+  #set:hover {
+    background: #018d7d;
+  }
+  .show-section .form-section{
+      background: #E0F7FA;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+
+  }
+  .modal-section .form-section{
+      background: #E0F7FA;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      position: relative;
+      overflow-y: auto;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+
+  }
+  .section-title{
+    font-size: 1rem;
+    color: #00796b;
+    margin:2px 0;
+    padding: 2px 0;
+  }
+  
+  .problem-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1px 0;
+    font-weight: bold;
+    border-bottom: 1px solid #00796b;
+    margin-bottom: 2px;
+  }
+  
+  .problem-label {
+    padding:2px;
+    margin:0;
+    text-align: center;
+    flex: 1;
+    color:#00796b;
+
+  }
+  
+  .problem-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+    margin:0;
+    border-bottom: 1px solid #00796b;
+
+  }
+  .problem-item:last-child{
+    margin: 0;
+  }
+  
+  .problem-rating, .problem-target {
+    flex: 1;
+    text-align: center;
+    padding:5px;
+    margin:0;
+    color:#00796b;
+    background-color: transparent;
+
+  }
+  
+  .results-section {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Close button styling */
+  #close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #999;
+    cursor: pointer;
+  }
+  
+  #close:hover {
+    color: #555;
+  }
+  
+  /* Modal overlay */
+  body.modal-open {
+    overflow: hidden;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+  }
+  .add-item{
+    width:100%;
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    margin-bottom: 5px;
+
+  }
+  #targetCount,#rating{
+    width:45%;
+    padding:4px;
+    padding:4px 8px;
+    margin-bottom: 3px;
+    font-size: .8rem;
+    border-radius: 5px;
+    outline: none;
+    color:#00796b;
+    border: 1px solid #00796b;
+    background-color: transparent;
+  }
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E0F7FA; 
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00796b;
+  border-radius: 6px;
+}
+
+
+::-webkit-scrollbar-horizontal {
+  height: 12px;
+}
+
+::-webkit-scrollbar-thumb-horizontal {
+  background: #2575fc;
+}
+
+
+#showstartDate,#showendDate{
+  cursor:not-allowed;
+}
+
+.progress {
+  height: 16px;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color:rgb(1, 197, 1);
+  position: relative;
+  width:0;
+  max-width: 100%;
+}
+.textShow{
+  font-size: 12px;
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-weight: 800;
+  margin-right: 6px;
+  text-wrap: nowrap;
+
+}
+.progress-bar-striped {
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 1rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.rating-no{
+  font-size: 14px;
+  margin-bottom: 3px;
+  color: #00796b;
+}
+.alert{
+  font-size: 14px;
+  font-weight: 600;
+  color: #00796b;
+  margin: 8px;
+  display: none;
+}
+
+input[type="text"] {
+  cursor: text;
+}

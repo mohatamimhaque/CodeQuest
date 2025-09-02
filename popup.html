@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeQuest</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1 class="tracker-title">CodeQuest</h1>
+    <main class="tracker-container">
+      <div class="show-section">
+        <div class="form-section">
+          <div class="item">
+            <label for="handle" class="form-label">Handle:</label>
+            <input type="text" id="handle" class="input-field" placeholder="Fetching handle..." disabled />
+          </div>
+          <div class="item">
+            <label for="showstartDate" class="form-label">From:</label>
+            <input type="date" id="showstartDate" class="input-field" disabled />
+          </div>
+          <div class="item">
+            <label for="showendDate" class="form-label">To:</label>
+            <input type="date" id="showendDate" class="input-field" disabled>
+          </div>
+          <section class="target-section showing">
+            <h2 class="section-title">Target Problems</h2>
+            <p class="alert" ></p>
+            <div class="showList">
+            </div>
+          </section>
+        </div>
+        <button id="setnew" class="primary-button">Set New Target</button>
+        <button id="setgithub" class="primary-button">Set Github Repo</button>
+      </div>
+      <div class="modal-section set_target_section" >
+        <div class="form-section">
+          <div class="item">
+            <label for="handle" class="form-label">Handle:</label>
+            <input type="text" id="showhandle" class="input-field" placeholder="Fetching handle..." disabled />
+          </div>
+          <div class="item">
+            <label for="startDate" class="form-label">Start Date:</label>
+            <input type="date" id="startDate" class="input-field" />
+          </div>
+          <div class="item">
+            <label for="endDate" class="form-label">End Date:</label>
+            <input type="date" id="endDate" class="input-field" />
+          </div>
+          <section class="target-section">
+            <h2 class="section-title">Target Problems</h2>
+            <div class="problem-list">
+              <div class="problem-header">
+                <p class="problem-label">Rating</p>
+                <p class="problem-label">Target</p>
+              </div>
+            </div>
+          </section>
+          <section class="add-section">
+            <div class="add-item">
+              <select id="rating" class="dropdown">
+                <option value="800">800</option>
+                <option value="1000">1000</option>
+                <option value="1200">1200</option>
+              </select>
+              <input id="targetCount" type="number" class="small-input" placeholder="Target Count" />
+            </div>
+            <button id="add" class="primary-button">Add more</button>
+          </section>
+        </div>
+        <button id="set" class="primary-button">Set Target</button>
+      </div>
+
+
+
+      <div class="modal-section set_repo_section" >
+        <div class="form-section" style="height: 180px;display: flex;align-items: center;justify-content: center;">
+          <div class="item">
+            <label for="username" class="form-label">Username:</label>
+            <input type="text" id="username" class="input-field" placeholder="mohatamimhaque"  />
+          </div>
+          <div class="item">
+            <label for="repo" class="form-label">Repository:</label>
+            <input type="text" id="repo" class="input-field" placeholder="ProblemVault"  />
+          </div>
+          <div class="item">
+            <label for="token" class="form-label">Token:</label>
+            <input type="text" id="token" class="input-field" placeholder="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"/>
+          </div>
+          <div class="item">
+            <label for="path" class="form-label">Path:</label>
+            <input type="text" id="path" class="input-field" placeholder="solutions/codeforces/" />
+          </div>
+        </div>
+        <button id="setrepo" class="primary-button">Setup</button>
+      </div>
+      <a id="developer" style="font-size:16px;color:#00796b;text-align: center;width: 100%;margin-top: 8px;margin-left:20%;text-decoration:none;padding:5px 0;display: flex;align-items: center;" href="https://codeforces.com/">
+        Developed by : <strong>Mohatamim</strong>
+      </a>
+    </main>
+    <script src="script.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "CodeQuest",
+  "version": "2.0",
+  "description": "Track solved problems by rating and date, and automatically sync your accepted Codeforces solutions to a GitHub repository.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://codeforces.com/*",
+    "https://api.github.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "icons": {
+    "16": "icon.png",
+    "32": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://codeforces.com/*"],
+      "js": [
+        "libs/chart.umd.min.js",
+        "libs/chartjs-plugin-datalabels.min.js",
+        "content.js"
+      ]
+    }
+  ],
+  "browser_specific_settings": {
+  "gecko": {
+    "id": "codequest@outlook.com"
+    }
+},
+   "web_accessible_resources": [
+    {
+      "resources": [ "icon.png" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
+}
